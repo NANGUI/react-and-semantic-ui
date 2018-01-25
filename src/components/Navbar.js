@@ -3,7 +3,7 @@ import {
     BrowserRouter,
     Link
  } from 'react-router-dom'
-import { Menu, MenuItem } from "semantic-ui-react"
+import { Menu, MenuItem, Icon } from "semantic-ui-react"
 import "semantic-ui-css/semantic.min.css"
 
 
@@ -16,7 +16,7 @@ class Navbar extends Component {
     const { activeItem } = this.state;
 
     return <BrowserRouter>
-        <Menu>
+        <Menu fixed="top">
           <MenuItem header>
             <Link to="/">{this.props.title}</Link>
           </MenuItem>
@@ -40,6 +40,12 @@ class Navbar extends Component {
           <MenuItem href="/plus" active={activeItem === "plus"} onClick={this.handleItemClick}>
             Plus ...
           </MenuItem>
+
+          <Menu.Menu position="right">
+            <Menu.Item>
+              Adonai NANGUI <Icon color="blue" name="copyright" /> 2018
+            </Menu.Item>
+          </Menu.Menu>
         </Menu>
       </BrowserRouter>;
   }
